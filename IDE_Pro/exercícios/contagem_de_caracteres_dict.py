@@ -4,28 +4,17 @@ def contar_caracteres(s):
     Ex:
 
     >>> contar_caracteres('renzo')
-    {'e': 1, 'n': 1, 'o': 1, 'r': 1, 'z': 1}
+    {'r': 1, 'e': 1, 'n': 1, 'z': 1, 'o': 1}
     >>> contar_caracteres('banana')
-    {'a': 3, 'b': 1, 'n': 2}
+    {'b': 1, 'a': 3, 'n': 2}
 
     :param s: string a ser contada
 
     """
-    caracteres_ordenados = sorted(s)
-    caracter_anterior = caracteres_ordenados[0]
-    contagem = 1
-
     resultado = {}
 
-    for caracter in caracteres_ordenados[1:]:
-        if  caracter == caracter_anterior:
-            contagem += 1
-        else:
-            resultado[caracter_anterior] = contagem
-            caracter_anterior = caracter
-            contagem = 1
-
-    resultado[caracter_anterior] = contagem
+    for caracter in s:
+        resultado[caracter] = resultado.get(caracter, 0) + 1
 
     return resultado
 
