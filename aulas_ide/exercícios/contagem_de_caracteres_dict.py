@@ -18,8 +18,9 @@ def contar_caracteres(s):
 
     return resultado
 
+
 if __name__ == '__main__':
-    print(contar_caracteres('renzo'))
+    print(contar_caracteres('lucas'))
     print()
     print(contar_caracteres('banana'))
 
